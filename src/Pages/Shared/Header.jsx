@@ -16,6 +16,9 @@ const Header = () => {
         <ActiveRoute to={`/menu`}>Our Menu</ActiveRoute>
       </li>
       <li>
+        <ActiveRoute to={`/order/salad`}>Order</ActiveRoute>
+      </li>
+      <li>
         <ActiveRoute to={`/shop`}>Our Shop</ActiveRoute>
       </li>
     </>
