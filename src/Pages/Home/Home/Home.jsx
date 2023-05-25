@@ -2,6 +2,7 @@ import Banner from "../Banner/Banner";
 import Category from "../Category/Category";
 import { Helmet } from "react-helmet-async";
 import Featured from "../Featured/Featured";
+import PopularMenu from "../PopularMenu/PopularMenu";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       </Helmet>
       <Banner></Banner>
       <Category></Category>
+      <PopularMenu></PopularMenu>
       <Featured></Featured>
     </div>
   );
