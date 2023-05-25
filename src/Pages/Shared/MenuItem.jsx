@@ -1,8 +1,18 @@
-const MenuItem = ({ subHeading, heading }) => {
+const MenuItem = ({ item }) => {
+  const { name, image, price, recipe } = item;
   return (
-    <div className="text-center mt-20 mb-8 md:w-4/12 mx-auto">
-      <p className="text-yellow-500 mb-2">--- {subHeading} ---</p>
-      <h2 className="text-2xl uppercase py-3 border-y-4">{heading}</h2>
+    <div className="flex space-x-2">
+      <img
+        style={{ borderRadius: "0 200px 200px 200px" }}
+        className="w-[100px]"
+        src={image}
+        alt=""
+      />
+      <div>
+        <h3 className="uppercase">{name}----------</h3>
+        <p>{recipe}</p>
+      </div>
+      <p className="text-yellow-500">${price}</p>
     </div>
   );
 };
