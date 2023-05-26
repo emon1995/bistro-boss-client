@@ -1,15 +1,19 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Header from "../Pages/Shared/Header";
 import Footer from "../Pages/Shared/Footer";
 
 const Main = () => {
+  const location = useLocation();
+  const noHeaderFooter =
+    location.pathname.includes("login") || location.pathname.includes("signup");
+
   return (
     <div>
-      <Header></Header>
+      {noHeaderFooter || <Header></Header>}
       <div className="min-h-[calc(100vh-332px)]">
         <Outlet />
       </div>
-      <Footer></Footer>
+      {noHeaderFooter || <Footer></Footer>}
     </div>
   );
 };
