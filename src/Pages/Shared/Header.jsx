@@ -2,9 +2,11 @@ import { useContext } from "react";
 import ActiveRoute from "../../components/ActiveRoute/ActiveRoute";
 import { AuthContext } from "../../providers/AuthProviders";
 import { FaShoppingCart } from "react-icons/fa";
+import useCart from "../../hooks/useCart";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [cart] = useCart();
 
   const handleLogout = () => {
     logOut()
@@ -40,7 +42,7 @@ const Header = () => {
         <ActiveRoute to={`/`}>
           <button className="btn gap-2">
             <FaShoppingCart />
-            <div className="badge badge-secondary">+99</div>
+            <div className="badge badge-secondary">+{cart?.length || 0}</div>
           </button>
         </ActiveRoute>
       </li>
