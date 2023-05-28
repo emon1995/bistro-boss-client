@@ -5,9 +5,13 @@ import {
   FaWallet,
   FaShoppingCart,
 } from "react-icons/fa";
+import { AiOutlineMenu, AiOutlineOrderedList } from "react-icons/ai";
 import ActiveRoute from "../components/ActiveRoute/ActiveRoute";
+import useCart from "../hooks/useCart";
 
 const DashboardLayout = () => {
+  const [cart] = useCart();
+
   return (
     <div className="drawer drawer-mobile">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -41,6 +45,9 @@ const DashboardLayout = () => {
           <li>
             <ActiveRoute color={false} to={`/dashboardLayout/mycart`}>
               <FaShoppingCart /> My Cart{" "}
+              <span className="badge badge-secondary">
+                +{cart?.length || 0}
+              </span>
             </ActiveRoute>
           </li>
           <div className="divider"></div>
@@ -51,12 +58,12 @@ const DashboardLayout = () => {
           </li>
           <li>
             <ActiveRoute color={false} to={`/menu`}>
-              <FaShoppingCart /> Menu
+              <AiOutlineMenu /> Menu
             </ActiveRoute>
           </li>
           <li>
             <ActiveRoute color={false} to={`/order/salad`}>
-              <FaShoppingCart /> Order Food
+              <AiOutlineOrderedList /> Order Food
             </ActiveRoute>
           </li>
           {/* <li>
