@@ -27,7 +27,7 @@ const Header = () => {
         <ActiveRoute to={`/contact`}>Contact Us</ActiveRoute>
       </li>
       <li>
-        <ActiveRoute to={`/dashboard`}>Dashboard</ActiveRoute>
+        <ActiveRoute to={`/dashboardLayout`}>Dashboard</ActiveRoute>
       </li>
       <li>
         <ActiveRoute to={`/menu`}>Our Menu</ActiveRoute>
@@ -48,7 +48,7 @@ const Header = () => {
       </li>
       {user?.email ? (
         <li>
-          <ActiveRoute to={`/`}>
+          <ActiveRoute color={true} to={`/`}>
             <button onClick={handleLogout} className="btn btn-secondary">
               Logout
             </button>
@@ -56,7 +56,9 @@ const Header = () => {
         </li>
       ) : (
         <li>
-          <ActiveRoute to={`/login`}>Login</ActiveRoute>
+          <ActiveRoute color={true} to={`/login`}>
+            Login
+          </ActiveRoute>
         </li>
       )}
     </>

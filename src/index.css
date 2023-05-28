@@ -10,8 +10,10 @@
   }
 }
 
+/* text-[#EEFF25] */
+
 .active {
-  @apply text-[#EEFF25] uppercase text-sm bg-opacity-30 bg-base-100 font-extrabold;
+  @apply uppercase text-sm bg-opacity-30 bg-base-100 font-extrabold;
 }
 
 .default {
