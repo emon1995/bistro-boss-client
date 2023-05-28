@@ -1,6 +1,21 @@
+import { useContext } from "react";
 import ActiveRoute from "../../components/ActiveRoute/ActiveRoute";
+import { AuthContext } from "../../providers/AuthProviders";
+import { FaShoppingCart } from "react-icons/fa";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logOut()
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
+
   const navItems = (
     <>
       <li>
@@ -21,6 +36,27 @@ const Header = () => {
       <li>
         <ActiveRoute to={`/shop`}>Our Shop</ActiveRoute>
       </li>
+      <li>
+        <ActiveRoute to={`/`}>
+          <button className="btn gap-2">
+            <FaShoppingCart />
+            <div className="badge badge-secondary">+99</div>
+          </button>
+        </ActiveRoute>
+      </li>
+      {user?.email ? (
+        <li>
+          <ActiveRoute to={`/`}>
+            <button onClick={handleLogout} className="btn btn-secondary">
+              Logout
+            </button>
+          </ActiveRoute>
+        </li>
+      ) : (
+        <li>
+          <ActiveRoute to={`/login`}>Login</ActiveRoute>
+        </li>
+      )}
     </>
   );
 
