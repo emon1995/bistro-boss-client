@@ -39,7 +39,7 @@ const Header = () => {
         <ActiveRoute to={`/shop`}>Our Shop</ActiveRoute>
       </li>
       <li>
-        <ActiveRoute to={`/`}>
+        <ActiveRoute to={`/dashboardLayout/mycart`}>
           <button className="btn gap-2">
             <FaShoppingCart />
             <div className="badge badge-secondary">+{cart?.length || 0}</div>
