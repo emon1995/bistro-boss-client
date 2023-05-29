@@ -14,6 +14,7 @@ import UserHome from "../Pages/Dashboard/UserHome";
 import Reservation from "../Pages/Dashboard/Reservation";
 import PaymentHistory from "../Pages/Dashboard/PaymentHistory";
 import PrivateRoutes from "./PrivateRoutes";
+import AllUsers from "../Pages/Dashboard/AllUsers";
 
 const router = createBrowserRouter([
   {
@@ -81,6 +82,10 @@ const router = createBrowserRouter([
             <MyCart></MyCart>
           </PrivateRoutes>
         ),
+      },
+      {
+        path: "allusers",
+        element: <AllUsers></AllUsers>,
       },
     ],
   },
