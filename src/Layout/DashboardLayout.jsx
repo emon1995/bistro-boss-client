@@ -47,7 +47,7 @@ const DashboardLayout = () => {
               </li>
               <li>
                 <ActiveRoute
-                  to={`/dashboardLayout/paymenthistory`}
+                  to={`/dashboardLayout/manageItems`}
                   color={false}
                 >
                   <FaWallet /> Manage Items{" "}
