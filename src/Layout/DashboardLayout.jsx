@@ -41,8 +41,8 @@ const DashboardLayout = () => {
                 </ActiveRoute>
               </li>
               <li>
-                <ActiveRoute to={`/dashboardLayout/reservation`} color={false}>
-                  <FaUtensils /> Add Items{" "}
+                <ActiveRoute to={`/dashboardLayout/addItem`} color={false}>
+                  <FaUtensils /> Add an Items{" "}
                 </ActiveRoute>
               </li>
               <li>
