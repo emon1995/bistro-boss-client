@@ -36,7 +36,7 @@ const DashboardLayout = () => {
           {isAdmin ? (
             <>
               <li>
-                <ActiveRoute to={`/dashboardLayout/userhome`} color={false}>
+                <ActiveRoute to={`/dashboardLayout/adminhome`} color={false}>
                   <FaHome /> Adimin Home{" "}
                 </ActiveRoute>
               </li>

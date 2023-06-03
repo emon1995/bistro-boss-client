@@ -2,6 +2,7 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useEffect, useState } from "react";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useAuth from "../../../hooks/useAuth";
+// import './CheckoutForm.css';
 
 const CheckoutForm = ({ cart, price }) => {
     const { user } = useAuth();
@@ -74,7 +75,7 @@ const CheckoutForm = ({ cart, price }) => {
                 transactionId: paymentIntent.id,
                 price,
                 quantity: cart.length,
-                items: cart.map(item => item._id),
+                cartItems: cart.map(item => item._id),
                 itemNames: cart.map(item => item.name),
                 date: new Date(),
                 menuItems: cart.map(item => item.menuItemId),

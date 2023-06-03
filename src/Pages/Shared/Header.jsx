@@ -3,10 +3,12 @@ import ActiveRoute from "../../components/ActiveRoute/ActiveRoute";
 import { AuthContext } from "../../providers/AuthProviders";
 import { FaShoppingCart } from "react-icons/fa";
 import useCart from "../../hooks/useCart";
+import useAdmin from "../../hooks/useAdmin";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   const [cart] = useCart();
+  const [isAdmin] = useAdmin();
 
   const handleLogout = () => {
     logOut()
@@ -27,7 +29,7 @@ const Header = () => {
         <ActiveRoute to={`/contact`}>Contact Us</ActiveRoute>
       </li>
       <li>
-        <ActiveRoute to={`/dashboardLayout`}>Dashboard</ActiveRoute>
+        <ActiveRoute to={isAdmin ? "/dashboardLayout/adminhome" : "/dashboardLayout/userhome"}>Dashboard</ActiveRoute>
       </li>
       <li>
         <ActiveRoute to={`/menu`}>Our Menu</ActiveRoute>
