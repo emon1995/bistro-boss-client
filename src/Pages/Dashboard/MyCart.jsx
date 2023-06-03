@@ -34,7 +34,7 @@ const MyCart = () => {
   };
 
   return (
-    <div className="w-full md:px-20">
+    <div className="w-full md:px-20 mt-20">
       <Helmet>
         <title>Bistro Boss | My Cart</title>
       </Helmet>
