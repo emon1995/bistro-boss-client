@@ -5,7 +5,7 @@ const useMenu = () => {
   // const [menu, setMenu] = useState([]);
   // const [loading, setLoading] = useState(true);
   // useEffect(() => {
-  //   fetch("https://bistro-boss-one.vercel.app/menu")
+  //   fetch("https://bistro-boss-server-five.vercel.app/menu")
   //     .then((res) => res.json())
   //     .then((data) => {
   //       setMenu(data);
@@ -15,7 +15,7 @@ const useMenu = () => {
   const { data: menu = [], isLoading: loading, refetch } = useQuery({
     queryKey: ['menu'],
     queryFn: async () => {
-      const res = await fetch('https://bistro-boss-one.vercel.app/menu');
+      const res = await fetch('https://bistro-boss-server-five.vercel.app/menu');
       return res.json();
     }
   })

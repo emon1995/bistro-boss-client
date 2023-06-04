@@ -19,7 +19,7 @@ const SocialLogin = () => {
           email: result?.user?.email,
         };
 
-        fetch(`https://bistro-boss-one.vercel.app/users`, {
+        fetch(`https://bistro-boss-server-five.vercel.app/users`, {
           method: "POST",
           headers: {
             "content-type": "application/json",

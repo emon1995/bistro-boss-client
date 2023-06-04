@@ -54,7 +54,7 @@ const AuthProviders = ({ children }) => {
       // get and set token
       if (currentUser) {
         axios
-          .post("https://bistro-boss-one.vercel.app/jwt", { email: currentUser.email })
+          .post("https://bistro-boss-server-five.vercel.app/jwt", { email: currentUser.email })
           .then((data) => {
             console.log(data.data.token);
             localStorage.setItem("access-token", data.data.token);

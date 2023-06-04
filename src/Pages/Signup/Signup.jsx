@@ -25,7 +25,7 @@ const SignUp = () => {
         .then(() => {
           const savedUser = { name: data.name, email: data.email };
 
-          fetch(`https://bistro-boss-one.vercel.app/users`, {
+          fetch(`https://bistro-boss-server-five.vercel.app/users`, {
             method: "POST",
             headers: {
               "content-type": "application/json",
